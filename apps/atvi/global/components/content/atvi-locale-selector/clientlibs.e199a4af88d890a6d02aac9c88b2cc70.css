@@ -1,0 +1,469 @@
+.atvi-locale-selector {
+    font-family: "Arial", sans-serif;
+    position: relative;
+    /***************************
+    FLAG ICONS
+    ****************************/
+}
+
+.atvi-locale-selector button {
+    cursor: pointer;
+}
+
+.atvi-locale-selector button:focus,
+.atvi-locale-selector button:active {
+    outline: none;
+    border: none;
+}
+
+.atvi-locale-selector.open-up .locale-panel {
+    position: absolute;
+    bottom: 50px;
+    z-index: 10;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+}
+
+.atvi-locale-selector.open-down .locale-panel {
+    position: absolute;
+    top: 30px;
+    z-index: 10;
+}
+
+.atvi-locale-selector.open-down .cur-locale-selector-btn button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.atvi-locale-selector.open-down .cur-locale-selector-btn button .flag-arrow {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0 5px;
+    border-color: #9c9c9c transparent transparent transparent;
+}
+
+.atvi-locale-selector .cur-locale-selector-btn {
+    line-height: 1px;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.atvi-locale-selector .cur-locale-selector-btn button {
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    top: -1px;
+}
+
+.atvi-locale-selector .locale-panel {
+    width: 370px;
+    background: #434343;
+    padding: 10px;
+    display: none;
+    -webkit-transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    left: 50%;
+}
+
+.atvi-locale-selector .locale-panel .locale-panel-header {
+    font-size: 12px;
+    color: #FFF;
+    padding: 10px 0;
+    position: relative;
+    text-align: left;
+}
+
+.atvi-locale-selector .locale-panel .locale-panel-header .selected-region-text {
+    /*display: none;
+                font-size: 0;*/
+}
+
+.atvi-locale-selector .locale-panel .locale-panel-header .close-btn {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: none;
+    border: none;
+    position: absolute;
+    top: -3px;
+    right: 0px;
+}
+
+.atvi-locale-selector .locale-panel .locale-panel-header .close-btn button {
+    background: none;
+    border: none;
+    color: #FFF;
+    font-size: 30px;
+}
+
+.atvi-locale-selector .locale-panel ul {
+    text-align: left;
+    display: block;
+}
+
+.atvi-locale-selector .locale-panel ul:after {
+    content: "";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    display: block;
+}
+
+.atvi-locale-selector .locale-panel ul li {
+    width: 47%;
+    margin-right: 5%;
+    float: left;
+}
+
+.atvi-locale-selector .locale-panel ul li:nth-child(even) {
+    margin-right: 0;
+}
+
+.atvi-locale-selector .locale-panel ul li.active .region:after {
+    display: inline-block;
+    vertical-align: middle;
+    content: "";
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMywgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHdpZHRoPSIyMHB4IiBoZWlnaHQ9IjIwcHgiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgMjAgMjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8cG9seWxpbmUgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJzcXVhcmUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgcG9pbnRzPSIyLjExOCwxMS45NDEgCgk2LjE5MywxOC4wMjggMTcuOTA2LDEuOTc4ICIvPgo8L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 5px;
+    line-height: 0;
+    width: 12px;
+    height: 12px;
+    top: -2px;
+}
+
+.atvi-locale-selector .locale-panel ul li a {
+    color: #FFF;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    display: block;
+}
+
+.atvi-locale-selector .locale-panel ul li a:hover {
+    color: #FFF;
+}
+
+.atvi-locale-selector .locale-panel ul li .region {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 13px;
+    font-size: 10px;
+}
+
+.atvi-locale-selector .flag-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 13px;
+    background-color: #abc;
+    background-image: url(../../../../../../content/dam/atvi/global/locale-selector/flags-sprite-small.png);
+}
+
+.atvi-locale-selector .flag-en .flag-icon {
+    background-position: 0px 0px;
+}
+
+.atvi-locale-selector .flag-en_gb .flag-icon {
+    background-position: -29px 0px;
+}
+
+.atvi-locale-selector .flag-en_ca .flag-icon {
+    background-position: -340px 0px;
+}
+
+.atvi-locale-selector .flag-en_au .flag-icon {
+    background-position: -381px 0px;
+}
+
+.atvi-locale-selector .flag-en_ar .flag-icon {
+    background-position: -524px 0px;
+}
+
+.atvi-locale-selector .flag-en_nz .flag-icon {
+    background-position: -114px 0px;
+}
+
+.atvi-locale-selector .flag-en_za .flag-icon {
+    background-position: -564px 0px;
+}
+
+.atvi-locale-selector .flag-fr .flag-icon {
+    background-position: -263px 0px;
+}
+
+.atvi-locale-selector .flag-fr_lu .flag-icon {
+    background-position: -157px 0px;
+}
+
+.atvi-locale-selector .flag-fr_ca .flag-icon {
+    background-position: -340px 0px;
+}
+
+.atvi-locale-selector .flag-es .flag-icon {
+    background-position: -302px 0px;
+}
+
+.atvi-locale-selector .flag-es_mx .flag-icon,
+.atvi-locale-selector.flag-mx .flag-icon {
+    background-position: -180px 0px;
+}
+
+.atvi-locale-selector .flag-es_cl .flag-icon {
+    background-position: -603px 0px;
+}
+
+.atvi-locale-selector .flag-it .flag-icon {
+    background-position: -220px 0px;
+}
+
+.atvi-locale-selector .flag-de .flag-icon {
+    background-position: -241px 0px;
+}
+
+.atvi-locale-selector .flag-pt .flag-icon {
+    background-position: -405px 0px;
+}
+
+.atvi-locale-selector .flag-pt_br .flag-icon {
+    background-position: -359px 0px;
+}
+
+.atvi-locale-selector .flag-da .flag-icon {
+    background-position: -320px 0px;
+}
+
+.atvi-locale-selector .flag-nl .flag-icon {
+    background-position: -157px 0px;
+}
+
+.atvi-locale-selector .flag-nl_be .flag-icon,
+.atvi-locale-selector .flag-fr_be .flag-icon {
+    background-position: -484px 0px;
+}
+
+.atvi-locale-selector .flag-fi .flag-icon {
+    background-position: -282px 0px;
+}
+
+.atvi-locale-selector .flag-no .flag-icon {
+    background-position: -138px 0px;
+}
+
+.atvi-locale-selector .flag-sv .flag-icon {
+    background-position: -51px 0px;
+}
+
+.atvi-locale-selector .flag-pl .flag-icon {
+    background-position: -91px 0px;
+}
+
+.atvi-locale-selector .flag-ru .flag-icon,
+.atvi-locale-selector .flag-ru_ru .flag-icon {
+    background-position: -70px 0px;
+}
+
+.atvi-locale-selector .flag-ar .flag-icon,
+.atvi-locale-selector .flag-ar_sa .flag-icon {
+    background-position: -425px 0px;
+}
+
+.atvi-locale-selector .flag-ja .flag-icon,
+.atvi-locale-selector .flag-jp .flag-icon {
+    background-position: -200px 0px;
+}
+
+.atvi-locale-selector .flag-ko .flag-icon {
+    background-position: -505px 0px;
+}
+
+.atvi-locale-selector .flag-zh_cn .flag-icon {
+    background: none;
+}
+
+.atvi-locale-selector .flag-zh_tw .flag-icon {
+    background: none;
+}
+
+.atvi-locale-selector .flag-tr .flag-icon,
+.atvi-locale-selector .flag-tr_tr .flag-icon {
+    background-position: -544px 0px;
+}
+
+.atvi-locale-selector .flag-th .flag-icon {
+    background-position: -585px 0px;
+}
+
+.atvi-locale-selector .flag-ms .flag-icon,
+.atvi-locale-selector .flag-en_my .flag-icon {
+    background: none;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-icon {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 30px;
+    background-color: #abc;
+    background-image: url(../../../../../../content/dam/atvi/global/locale-selector/flags-sprite-large.png);
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-en .flag-icon {
+    background-position: 0px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-en_gb .flag-icon {
+    background-position: -58px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-en_ca .flag-icon {
+    background-position: -780px 0px;
+    width: 47px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-en_au .flag-icon {
+    background-position: -870px 0px;
+    width: 61px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-en_ar .flag-icon {
+    background-position: -1113px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-en_nz .flag-icon {
+    background-position: -256px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-en_za .flag-icon {
+    background-position: 0px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-fr .flag-icon {
+    background-position: -603px 0px;
+    width: 47px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-fr_lu .flag-icon {
+    background-position: -603px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-fr_ca .flag-icon {
+    background-position: -780px 0px;
+    width: 47px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-es .flag-icon {
+    background-position: -693px 0px;
+    width: 45px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-es_mx .flag-icon,
+.atvi-locale-selector.large .cur-locale-selector-btn.flag-mx .flag-icon {
+    background-position: -406px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-it .flag-icon {
+    background-position: -505px 0px;
+    width: 46px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-de .flag-icon {
+    background-position: -552px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-pt .flag-icon {
+    background-position: -931px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-pt_br .flag-icon {
+    background-position: -827px 0px;
+    width: 43px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-da .flag-icon {
+    background-position: -731px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-nl .flag-icon {
+    background-position: -359px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-nl_be .flag-icon,
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-fr_be .flag-icon {
+    background-position: -1023px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-fi .flag-icon {
+    background-position: -650px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-no .flag-icon {
+    background-position: -317px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-sv .flag-icon {
+    background-position: -113px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-pl .flag-icon {
+    background-position: -208px 0px;
+    width: 47px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-ru .flag-icon,
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-ru_ru .flag-icon {
+    background-position: -162px 0px;
+    width: 45px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-ar .flag-icon,
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-ar_sa .flag-icon {
+    background-position: -977px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-ja .flag-icon,
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-jp .flag-icon {
+    background-position: -459px 0px;
+    width: 45px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-ko .flag-icon {
+    background-position: -1068px 0px;
+    width: 45px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-zh_cn .flag-icon {
+    background: none;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-zh_tw .flag-icon {
+    background: none;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-tr .flag-icon,
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-tr_tr .flag-icon {
+    background-position: -1164px 0px;
+}
+
+.atvi-locale-selector.large .cur-locale-selector-btn .flag-th .flag-icon {
+    background: -1208px 0px;
+}
+
+html[lang='ar'] .atvi-locale-selector .locale-panel ul li.active .region:after {
+    left: -5px;
+}
